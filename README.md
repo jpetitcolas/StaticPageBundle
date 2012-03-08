@@ -27,13 +27,7 @@ php bin/vendors update
 If you rather like to use git submodules directly without editing your deps file, just type the following into your command line interface:
 
 ``` bash
-git submodule add https://github.com/jpetitcolas/StaticPageBundle.git
-```
-
-Then, clone the submodule into your project:
-
-``` bash
-git submodule update --init --recursive
+git submodule add https://github.com/jpetitcolas/StaticPageBundle.git vendor/bundles/JPetitcolas/StaticPageBundle
 ```
 
 ### Configuring the bundle
