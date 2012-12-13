@@ -4,11 +4,12 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
-    <!--
+    
     <parameters>
-        <parameter key="j_petitcolas_static_page.example.class">JPetitcolas\StaticPageBundle\Example</parameter>
+        <!--<parameter key="j_petitcolas_static_page.example.class">JPetitcolas\StaticPageBundle\Example</parameter>-->
+        <parameter key="j_petitcolas_static_page.template.location">JPetitcolasStaticPageBundle:StaticPage:%s.html.twig</parameter>
     </parameters>
-
+    <!--
     <services>
         <service id="j_petitcolas_static_page.example" class="%j_petitcolas_static_page.example.class%">
             <argument type="service" id="service_id" />

@@ -28,7 +28,9 @@ class StaticPageController extends Controller
             return $this->redirect('/', 301);
         }
 
-        $template = sprintf('JPetitcolasStaticPageBundle:StaticPage:%s.html.twig', $page);
+        //make Location configable
+        $location = $this->container->getParameter('j_petitcolas_static_page.template.location');
+        $template = sprintf($location, $page);
         if(!$this->get('templating')->exists($template)) {
             throw new NotFoundHttpException(sprintf('Unable to find template %s.', $template));
         }
