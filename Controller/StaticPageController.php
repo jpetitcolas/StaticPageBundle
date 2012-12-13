@@ -34,7 +34,19 @@ class StaticPageController extends Controller
         if(!$this->get('templating')->exists($template)) {
             throw new NotFoundHttpException(sprintf('Unable to find template %s.', $template));
         }
-
-        return $this->render($template);
+        
+        $response = $this->render($template);
+        if($this->container->getParameter('j_petitcolas_static_page.httpcache')){
+            if($this->container->getParameter('j_petitcolas_static_page.httpcache.Public')){
+                $response->setPublic();
+            }
+            else{
+                $response->setPrivate();
+            }
+            $response->setMaxAge($this->container->getParameter('j_petitcolas_static_page.httpcache.MaxAge'));
+            $response->setSharedMaxAge($this->container->getParameter('j_petitcolas_static_page.httpcache.SharedMaxAge'));
+            $response->setTtl($this->container->getParameter('j_petitcolas_static_page.httpcache.TTL'));
+        }
+        return $response;
     }
 }

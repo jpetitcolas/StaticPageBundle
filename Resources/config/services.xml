@@ -7,6 +7,15 @@
     
     <parameters>
         <!--<parameter key="j_petitcolas_static_page.example.class">JPetitcolas\StaticPageBundle\Example</parameter>-->
+        <parameter key="j_petitcolas_static_page.httpcache">true</parameter>
+        <!--Whether or not caching should apply for client caches only-->
+        <parameter key="j_petitcolas_static_page.httpcache.Public">true</parameter>
+        <!--Default max age time in seconds for client (browser) caching-->
+        <parameter key="j_petitcolas_static_page.httpcache.MaxAge">86400</parameter>
+        <!--Default max age time in seconds for shared (proxy) caching-->
+        <parameter key="j_petitcolas_static_page.httpcache.SharedMaxAge">86400</parameter>
+        <!--Default TTL-->
+        <parameter key="j_petitcolas_static_page.httpcache.TTL">86400</parameter>
         <parameter key="j_petitcolas_static_page.template.location">JPetitcolasStaticPageBundle:StaticPage:%s.html.twig</parameter>
     </parameters>
     <!--
